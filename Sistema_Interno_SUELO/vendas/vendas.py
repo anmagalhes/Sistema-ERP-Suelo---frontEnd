@@ -9,7 +9,8 @@ class VendasWindows(BoxLayout):
 
 class VendasApp(App):
     def build(self):
-        return VendasWindows()
+        return VendasWindows()  
  
 if __name__ == '__main__':
     VendasApp().run()
+

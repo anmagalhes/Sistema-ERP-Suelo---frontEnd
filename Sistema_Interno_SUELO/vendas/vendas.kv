@@ -1,6 +1,78 @@
-<VendasWindows>:
-    BoxLayout:
-        Label:
-            text:'w'
+#:import hex kivy.utils.get_color_from_hex
 
+# hint_y y - Tamanho crescer ou reduzir - para baixo
+# hint_y x - Tamanho crescer ou reduzir - para lateral
+# BoxLayout - Semelhante o Continer ou Frame
+# GridLayout - Como se fosse o Excel pode mexer tanto colunas e Linhas
+# MDTextField: - Inpunt de informações
+
+<Btn@Button>:
+    background_normal:''
+    background_color: hex('#FFFFFF')
+
+<VendasWindows>:
+    canvas.before: 
+        Color: 
+            rgba: hex('#aA55e3')
+        Rectangle: 
+            size: self.size
+            pos: self.pos
+    orientation: 'vertical'
+
+    BoxLayout:
+        size_hint_y: .1
+        spacing: '.5'
+
+        Label:
+            id:lbl_Bemvindo
+            size_hint_x: .3
+            text: 'Seja bem vindo: '
+            color: hex('#FFFFFF')
+
+        GridLayout:
+            size_hint_x: .25
+            rows:2
+            cols:2
+            Label:  
+                text: 'Data'
+                color: hex('#AFFFF3')
+            Label:  
+                id: data
+                color: hex('#FFFFFF')
+            Label:  
+                text: 'Hora'
+                color: hex('#AFFFF3')
+            Label:  
+                id: hora
+                color: hex('#AFFFF3')   
+        Label:  
+            size_hint_x:.10
+        Btn:
+            id: admin_btn
+            size_hint_x:.15
+            text: 'Administrador'
+            on_release: root.admin()
+        
+        Btn:
+            id: sair_btn
+            size_hint_x:.15
+            text: 'Sair'
+            on_release: root.sair()
+             
+    BoxLayout:
+        canvas.before:
+            Color: 
+                rgba: hex('#FA8072')
+            Rectangle: 
+                size: self.size
+                pos: self.pos
+
+        size_hint_y: .90
+        Label:
+            text: 'b'
+          
+    BoxLayout:
+        size_hint_y: .05
+        Label:
+            text: 'd'
 
